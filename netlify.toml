@@ -1,0 +1,36 @@
+[build]
+  publish = "id11-site-v2-final"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# old v1 URLs — keep existing links and search results working
+[[redirects]]
+  from = "/trial.html"
+  to = "/assessment.html"
+  status = 301
+
+[[redirects]]
+  from = "/pathway.html"
+  to = "/pathways.html"
+  status = 301
+
+[[redirects]]
+  from = "/proof.html"
+  to = "/impact.html"
+  status = 301
+
+# anyone who bookmarked the deep path during setup
+[[redirects]]
+  from = "/id11-site-v2-final/*"
+  to = "/:splat"
+  status = 301

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://id11.org/sitemap.xml

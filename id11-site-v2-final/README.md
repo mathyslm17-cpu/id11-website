@@ -50,9 +50,37 @@ which is the behaviour you want.
 
 Checked at 390 / 768 / 1440: no horizontal overflow on any of the 25 pages.
 
+## Changed in this revision (v2.1)
+
+- US English throughout; language switcher removed from the nav
+- Real social handles: Instagram/YouTube `@sgp_id11`, TikTok `@propathways`, LinkedIn `/company/id11`
+- `leadership.html` rebuilt with 17 named people, grouped Executive / Football & Talent /
+  Advisors, plus the 13 ambassador expertise areas
+- `events.html` now a real calendar: VVD Cup at Willem II (Sept, Tilburg) and Futures (Dec, Orange County)
+- Foundation, Scholarships and Foundation Partners rewritten to future intent — no scholarship
+  is offered, promised or accepting applications anywhere on the site
+- `academies.html` rebuilt: new headline, network numbers, ISC Paris route, honest section headings
+- ISC Paris Business School (AACSB + AMBA) now named on home, about, pathways, study,
+  locations, universities, academies, club-partners and clubs
+- Explicit "no placement or contract is guaranteed" on pathways, contracts, assessment, thanks,
+  academies, study and the homepage
+- 48-hour personal response promise on every form and on contact/thanks
+- All three forms tag submissions with `enquiry_type`
+- New `privacy.html` and `terms.html`, linked from the assessment checkbox and the footer
+- Cost sections removed from `study.html` and `locations.html`
+- Universities reworded: ISC Paris is the only named academic partner; US college outcomes
+  described as placement routes, not partnerships
+
 ## Still outstanding
 
-- **Willem II crest** — not in the crest pack you sent, so it's not in the club wall.
+- **Willem II crest** — still not in the crest pack, so it's missing from the club wall
+  even though Willem II now hosts your September event.
+- **Cleared crest list** — you said only some clubs are cleared but didn't name them.
+  All 16 are still displayed. The list lives in one place: `CRESTS` at the top of `home.py`,
+  and the `wall` block in `pages.py` for `clubs.html`.
+- **Beyond the 11 links** — no channel or episode URL supplied, so the show links point at
+  the YouTube channel rather than an episode. The fake progress bar has been removed.
+- **Leadership photos and bios** — names and roles only; no photos or one-line bios supplied.
 - **Real contact email** — every page currently points at `info@id11.org`.
 - **Photography** — the alumni and hub shots are the ones you sent; higher-res versions
   would help the large blocks. Rights confirmation still needed on the Marbella landscape.

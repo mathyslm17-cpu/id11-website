@@ -170,7 +170,6 @@ m621 -523 c15 -15 23 -3524 7 -3565 l-10 -26 -182 0 c-101 0 -190 5 -198 10
       <a class="navtop plain" href="contact.html">Contact</a>
     </nav>
     <div class="nav-right">
-      <div class="lang" role="group" aria-label="Language"><button type="button" aria-pressed="true">EN</button><button type="button">FR</button><button type="button">ES</button><button type="button">DE</button><button type="button">PT</button><button type="button">NL</button><button type="button">ID</button></div>
       <a class="btn btn--sm" href="assessment.html">Get my assessment</a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
     </div>
@@ -224,11 +223,30 @@ m621 -523 c15 -15 23 -3524 7 -3565 l-10 -26 -182 0 c-101 0 -190 5 -198 10
           <p class="eyebrow rise">Watch &amp; listen</p>
           <h2 class="rise">Where to find it</h2>
         </div>
+        <div class="stack gap-m offset"><p class="lead rise">New episodes land on all three at the same time.</p></div>
+      </div>
+      <div class="socials">
+        <a class="soc rise" href="https://youtu.be/Gx5Acnz5VnM" rel="noopener">
+          <h3>YouTube</h3><p class="caption">Full episodes, in vision. Start with the latest one.</p></a>
+        <a class="soc rise" href="https://podcasts.apple.com/us/podcast/beyond-the-11/id6806140321" rel="noopener">
+          <h3>Apple Podcasts</h3><p class="caption">The full series, wherever you walk.</p></a>
+        <a class="soc rise" href="https://open.spotify.com/show/5rvDCsKfoCMgMvIPSBLKcz" rel="noopener">
+          <h3>Spotify</h3><p class="caption">Follow the show and it finds you.</p></a>
+      </div>
+    </div>
+  </section>
+  <section class="ground-night">
+    <div class="wrap stack gap-xl">
+      <div class="cols cols-2">
+        <div class="stack gap-m">
+          <p class="eyebrow rise">Take part</p>
+          <h2 class="rise">Get involved</h2>
+        </div>
         <div class="stack gap-m offset"></div>
       </div>
-<div class="cards-3">      <div class="card-s rise"><h3>YouTube</h3><p class="caption">Full episodes, in vision.</p></div>
-      <div class="card-s rise"><h3>Audio platforms</h3><p class="caption">The full series wherever you listen.</p></div>
-      <div class="card-s rise"><h3>Get involved</h3><p class="caption">If you have a story worth an hour of someone&rsquo;s time, tell us.</p></div></div>
+<div class="cards-3">      <div class="card-s rise"><h3>Guests</h3><p class="caption">If you have a story worth an hour of someone&rsquo;s time, tell us.</p></div>
+      <div class="card-s rise"><h3>Questions</h3><p class="caption">Ask something you want answered on the show.</p></div>
+      <div class="card-s rise"><h3>Clips</h3><p class="caption">Shorter moments on <a class="tlink" href="https://www.instagram.com/sgp_id11/" rel="noopener" style="font-size:12px">@sgp_id11</a>.</p></div></div>
     </div>
   </section>
 
@@ -359,8 +377,12 @@ m621 -523 c15 -15 23 -3524 7 -3565 l-10 -26 -182 0 c-101 0 -190 5 -198 10
     </nav>
     <div class="foot-list">
       <p class="eyebrow">Follow</p>
-      <a href="#">Instagram</a><a href="#">YouTube</a><a href="#">TikTok</a><a href="#">LinkedIn</a>
+      <a href="https://www.instagram.com/sgp_id11/" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/@sgp_id11" rel="noopener">YouTube</a>
+      <a href="https://www.tiktok.com/@propathways" rel="noopener">TikTok</a>
+      <a href="https://www.linkedin.com/company/id11/" rel="noopener">LinkedIn</a>
       <a href="show.html">Beyond the 11</a>
+      <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
       <p class="meta" style="margin-top:14px">&copy; 2026 ID11&trade;</p>
     </div>
   </div>
@@ -401,11 +423,6 @@ m621 -523 c15 -15 23 -3524 7 -3565 l-10 -26 -182 0 c-101 0 -190 5 -198 10
   });
   document.addEventListener('click', function(){ closeAll(null); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeAll(null); });
-
-  /* language */
-  var langs = document.querySelectorAll('.lang button');
-  langs.forEach(function(b){ b.addEventListener('click', function(){
-    langs.forEach(function(x){ x.setAttribute('aria-pressed', String(x===b)); }); }); });
 
   /* mobile menu */
   var mb = document.querySelector('.menu-btn'), menu = document.getElementById('menu');

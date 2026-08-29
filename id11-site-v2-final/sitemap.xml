@@ -24,4 +24,6 @@
   <url><loc>https://id11.org/assessment.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://id11.org/contact.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://id11.org/thanks.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://id11.org/privacy.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://id11.org/terms.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

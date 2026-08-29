@@ -170,7 +170,6 @@ m621 -523 c15 -15 23 -3524 7 -3565 l-10 -26 -182 0 c-101 0 -190 5 -198 10
       <a class="navtop plain" href="contact.html">Contact</a>
     </nav>
     <div class="nav-right">
-      <div class="lang" role="group" aria-label="Language"><button type="button" aria-pressed="true">EN</button><button type="button">FR</button><button type="button">ES</button><button type="button">DE</button><button type="button">PT</button><button type="button">NL</button><button type="button">ID</button></div>
       <a class="btn btn--sm" href="assessment.html">Get my assessment</a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
     </div>
@@ -197,8 +196,10 @@ m621 -523 c15 -15 23 -3524 7 -3565 l-10 -26 -182 0 c-101 0 -190 5 -198 10
       <h1 class="rise">Tell us where you are.<br>We&rsquo;ll tell you<br>where you could go.</h1>
       <p class="lead rise">Six short steps, five to seven minutes. Most questions are optional.
         No cost, no obligation, and no trial to buy at the end of it.</p>
-      <p class="meta rise">A real person reads every submission and replies with an honest read on your
-        level and your realistic routes &mdash; including if the answer is not yet.</p>
+      <p class="meta rise">Mathys reads every submission personally and replies within 48 hours with an
+        honest read on your level and your realistic routes &mdash; including if the answer is not yet.</p>
+      <p class="meta rise" style="color:rgba(255,255,255,.5)">No placement, trial or contract is guaranteed.
+        What happens next depends on your level, your performance and whether a club is the right fit.</p>
     </div>
   </section>
 
@@ -207,6 +208,7 @@ m621 -523 c15 -15 23 -3524 7 -3565 l-10 -26 -182 0 c-101 0 -190 5 -198 10
       <form class="assess" name="assessment" method="POST" data-netlify="true"
             netlify-honeypot="company" action="/thanks.html" novalidate>
         <input type="hidden" name="form-name" value="assessment">
+        <input type="hidden" name="enquiry_type" value="Player">
         <p class="hp"><label>Leave this empty <input name="company" tabindex="-1"></label></p>
 
         <div class="prog" aria-hidden="true"><i id="bar"></i></div>
@@ -224,7 +226,7 @@ m621 -523 c15 -15 23 -3524 7 -3565 l-10 -26 -182 0 c-101 0 -190 5 -198 10
     <p class="fs-n">Step 2 of 6</p>
     <h2>Your football</h2>
     <p class="fs-sub">Where you are in the game right now.</p>
-    <div class="fields"><div class="grid-2"><p class="f"><label for="club">Current club or academy <em>optional</em></label><input id="club" name="club" type="text" placeholder=""></p><p class="f"><label for="position">Position</label><select id="position" name="position" required><option value="">Select&hellip;</option><option>Goalkeeper</option><option>Centre-back</option><option>Full-back / wing-back</option><option>Defensive midfielder</option><option>Central midfielder</option><option>Attacking midfielder</option><option>Winger</option><option>Striker</option></select></p><p class="f"><label for="foot">Preferred foot <em>optional</em></label><select id="foot" name="foot"><option value="">Select&hellip;</option><option>Right</option><option>Left</option><option>Both</option></select></p><p class="f"><label for="level">Current playing level</label><select id="level" name="level" required><option value="">Select&hellip;</option><option>Professional</option><option>Semi-professional</option><option>Academy</option><option>Amateur / club</option><option>School or college</option><option>Not currently playing</option></select></p><p class="f"><label for="years">Years playing organised football <em>optional</em></label><select id="years" name="years"><option value="">Select&hellip;</option><option>Under 2</option><option>2–5</option><option>5–10</option><option>10+</option></select></p><p class="f"><label for="previous-clubs">Previous clubs <em>optional</em></label><input id="previous-clubs" name="previous_clubs" type="text" placeholder="Club, years"></p><p class="f f-wide"><label for="video">Highlight video link <em>optional</em></label><input id="video" name="video" type="url" placeholder="YouTube, Veo, Hudl&hellip;"><span class="hint">Not required. It helps, but we would rather see you on a pitch.</span></p></div><p class="f f-wide"><label for="football-goals">Your football goals <em>optional</em></label><textarea id="football-goals" name="football_goals" rows="3" placeholder="What are you trying to reach, and by when?"></textarea></p></div>
+    <div class="fields"><div class="grid-2"><p class="f"><label for="club">Current club or academy <em>optional</em></label><input id="club" name="club" type="text" placeholder=""></p><p class="f"><label for="position">Position</label><select id="position" name="position" required><option value="">Select&hellip;</option><option>Goalkeeper</option><option>Center back</option><option>Full back / wing back</option><option>Defensive midfielder</option><option>Central midfielder</option><option>Attacking midfielder</option><option>Winger</option><option>Striker</option></select></p><p class="f"><label for="foot">Preferred foot <em>optional</em></label><select id="foot" name="foot"><option value="">Select&hellip;</option><option>Right</option><option>Left</option><option>Both</option></select></p><p class="f"><label for="level">Current playing level</label><select id="level" name="level" required><option value="">Select&hellip;</option><option>Professional</option><option>Semi-professional</option><option>Academy</option><option>Amateur / club</option><option>School or college</option><option>Not currently playing</option></select></p><p class="f"><label for="years">Years playing organized football <em>optional</em></label><select id="years" name="years"><option value="">Select&hellip;</option><option>Under 2</option><option>2–5</option><option>5–10</option><option>10+</option></select></p><p class="f"><label for="previous-clubs">Previous clubs <em>optional</em></label><input id="previous-clubs" name="previous_clubs" type="text" placeholder="Club, years"></p><p class="f f-wide"><label for="video">Highlight video link <em>optional</em></label><input id="video" name="video" type="url" placeholder="YouTube, Veo, Hudl&hellip;"><span class="hint">Not required. It helps, but we would rather see you on a pitch.</span></p></div><p class="f f-wide"><label for="football-goals">Your football goals <em>optional</em></label><textarea id="football-goals" name="football_goals" rows="3" placeholder="What are you trying to reach, and by when?"></textarea></p></div>
   </fieldset>
   <fieldset class="fs" data-step="3" hidden>
     <legend class="sr">Study</legend>
@@ -252,7 +254,7 @@ m621 -523 c15 -15 23 -3524 7 -3565 l-10 -26 -182 0 c-101 0 -190 5 -198 10
     <p class="fs-n">Step 6 of 6</p>
     <h2>Review &amp; submit</h2>
     <p class="fs-sub">Check it over. Then a real person reads it.</p>
-    <div class="fields"><div class="review" id="review"></div><label class="chip chip--wide"><input type="checkbox" name="confirm" value="yes" required><span>I confirm the information above is accurate.</span></label><label class="chip chip--wide"><input type="checkbox" name="terms" value="yes" required><span>I agree to the ID11 privacy policy and terms.</span></label></div>
+    <div class="fields"><div class="review" id="review"></div><label class="chip chip--wide"><input type="checkbox" name="confirm" value="yes" required><span>I confirm the information above is accurate.</span></label><label class="chip chip--wide"><input type="checkbox" name="terms" value="yes" required><span>I agree to the ID11 <a href="privacy.html">privacy policy</a> and <a href="terms.html">terms</a>.</span></label></div>
   </fieldset>
 
         <p class="err" id="err" role="alert" hidden></p>
@@ -384,8 +386,12 @@ m621 -523 c15 -15 23 -3524 7 -3565 l-10 -26 -182 0 c-101 0 -190 5 -198 10
     </nav>
     <div class="foot-list">
       <p class="eyebrow">Follow</p>
-      <a href="#">Instagram</a><a href="#">YouTube</a><a href="#">TikTok</a><a href="#">LinkedIn</a>
+      <a href="https://www.instagram.com/sgp_id11/" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/@sgp_id11" rel="noopener">YouTube</a>
+      <a href="https://www.tiktok.com/@propathways" rel="noopener">TikTok</a>
+      <a href="https://www.linkedin.com/company/id11/" rel="noopener">LinkedIn</a>
       <a href="show.html">Beyond the 11</a>
+      <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
       <p class="meta" style="margin-top:14px">&copy; 2026 ID11&trade;</p>
     </div>
   </div>
@@ -426,11 +432,6 @@ m621 -523 c15 -15 23 -3524 7 -3565 l-10 -26 -182 0 c-101 0 -190 5 -198 10
   });
   document.addEventListener('click', function(){ closeAll(null); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeAll(null); });
-
-  /* language */
-  var langs = document.querySelectorAll('.lang button');
-  langs.forEach(function(b){ b.addEventListener('click', function(){
-    langs.forEach(function(x){ x.setAttribute('aria-pressed', String(x===b)); }); }); });
 
   /* mobile menu */
   var mb = document.querySelector('.menu-btn'), menu = document.getElementById('menu');

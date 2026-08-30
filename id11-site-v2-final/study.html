@@ -14,6 +14,7 @@
 <meta property="og:image" content="https://resilient-dodol-1cbabf.netlify.app/assets/og-default.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0B0C0B">
+<meta name="id11-build" content="v3.4">
 
 <link rel="icon" href="assets/id11-favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -232,13 +233,20 @@ m621 -523 c15 -15 23 -3524 7 -3565 l-10 -26 -182 0 c-101 0 -190 5 -198 10
         </div>
         <div class="stack gap-m offset"><p class="lead rise">This is the question worth asking any football-and-education program. Most cannot answer it.</p></div>
       </div>
+      <p class="accred-lead rise">Internationally accredited</p>
       <div class="accred rise">
-        <span class="isc"><img src="assets/accred/isc-paris.png" alt="ISC Paris Business School" loading="lazy" decoding="async"></span>
-        <span><img src="assets/accred/aacsb.png" alt="AACSB accredited" loading="lazy" decoding="async"></span>
-        <span><img src="assets/accred/amba.png" alt="AMBA accredited" loading="lazy" decoding="async"></span>
+        <a class="acc" href="https://www.aacsb.edu/" rel="noopener" target="_blank">
+          <img src="assets/accred/aacsb.png" alt="AACSB accredited" loading="lazy" decoding="async">
+          <span>AACSB</span></a>
+        <a class="acc" href="https://www.associationofmbas.com/" rel="noopener" target="_blank">
+          <img src="assets/accred/amba.png" alt="AMBA accredited" loading="lazy" decoding="async">
+          <span>AMBA</span></a>
+        <a class="acc" href="https://www.iscparis.com/" rel="noopener" target="_blank">
+          <img src="assets/accred/isc-paris.png" alt="ISC Paris Business School" loading="lazy" decoding="async">
+          <span>ISC Paris Business School</span></a>
       </div>
       <p class="accred-note rise">The ID11 degree route is delivered with ISC Paris Business School,
-        which holds AACSB and AMBA accreditation. The accreditations belong to ISC Paris.</p>
+        which holds AACSB and AMBA accreditation. The accreditations belong to ISC Paris.
     </div>
   </section>
   <section class="ground-night">
@@ -460,6 +468,99 @@ m621 -523 c15 -15 23 -3524 7 -3565 l-10 -26 -182 0 c-101 0 -190 5 -198 10
     menu.addEventListener('click', function(e){ if(e.target.tagName==='A') toggle(false); });
     document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !menu.hidden) toggle(false); });
   }
+})();
+</script>
+<script>
+/* ID11 funnel tracking.
+   Vendor-agnostic: fires into GA4 (gtag/dataLayer) and Plausible if either is present,
+   and no-ops safely if neither is. Install one and events start flowing with no code change.
+   It also stamps the traffic source into a hidden form field, so Netlify submissions carry
+   attribution even with no analytics installed at all. */
+(function(){
+  var W = window;
+
+  function track(name, props){
+    props = props || {};
+    try { if (typeof W.gtag === 'function') W.gtag('event', name, props); } catch(e){}
+    try { if (W.dataLayer && W.dataLayer.push) W.dataLayer.push(Object.assign({event:name}, props)); } catch(e){}
+    try { if (typeof W.plausible === 'function') W.plausible(name, {props: props}); } catch(e){}
+    try { if (W.ID11_DEBUG) console.log('[id11]', name, props); } catch(e){}
+  }
+  W.id11Track = track;
+
+  /* ---- where did this visitor come from ---- */
+  function source(){
+    try {
+      var q = new URLSearchParams(location.search);
+      var utm = q.get('utm_source');
+      if (utm) return utm + (q.get('utm_medium') ? ' / ' + q.get('utm_medium') : '')
+                         + (q.get('utm_campaign') ? ' / ' + q.get('utm_campaign') : '');
+      var r = document.referrer;
+      if (!r) return 'direct';
+      var host = new URL(r).hostname.replace(/^www\./, '');
+      if (/instagram/.test(host)) return 'instagram';
+      if (/tiktok/.test(host)) return 'tiktok';
+      if (/youtu/.test(host)) return 'youtube';
+      if (/linkedin|lnkd/.test(host)) return 'linkedin';
+      if (/google|bing|duckduckgo/.test(host)) return 'search';
+      if (host === location.hostname) return 'internal';
+      return host;
+    } catch(e){ return 'unknown'; }
+  }
+  var SRC = source();
+  try { if (SRC !== 'internal') sessionStorage.setItem('id11_src', SRC); } catch(e){}
+  var STORED = 'unknown';
+  try { STORED = sessionStorage.getItem('id11_src') || SRC; } catch(e){ STORED = SRC; }
+
+  /* stamp it into every form so it lands in the Netlify submission */
+  [].forEach.call(document.querySelectorAll('form[data-netlify]'), function(f){
+    var h = f.querySelector('input[name="source"]');
+    if (!h){ h = document.createElement('input'); h.type='hidden'; h.name='source'; f.appendChild(h); }
+    h.value = STORED + ' | ' + (W.innerWidth < 700 ? 'mobile' : 'desktop');
+  });
+
+  track('page_view', {page: location.pathname, source: STORED,
+                      device: W.innerWidth < 700 ? 'mobile' : 'desktop'});
+
+  /* ---- form funnel: started, each field completed, submitted ---- */
+  [].forEach.call(document.querySelectorAll('form[data-netlify]'), function(f){
+    var formName = (f.getAttribute('name') || 'form');
+    var started = false, done = {};
+
+    f.addEventListener('focusin', function(e){
+      if (!/^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName)) return;
+      if (e.target.name === 'company') return;
+      if (!started){ started = true; track('form_start', {form: formName, source: STORED}); }
+    });
+
+    f.addEventListener('change', function(e){
+      var n = e.target.name;
+      if (!n || n === 'company' || done[n]) return;
+      if (!String(e.target.value || '').trim()) return;
+      done[n] = true;
+      track('field_complete', {form: formName, field: n,
+                               filled: Object.keys(done).length, source: STORED});
+    });
+
+    f.addEventListener('submit', function(){
+      track('form_submit', {form: formName, source: STORED,
+                            fields_filled: Object.keys(done).length});
+    });
+  });
+
+  /* ---- assessment: which of the six steps people reach ---- */
+  W.id11Step = function(n){ track('assessment_step', {step: n, source: STORED}); };
+
+  /* ---- how far down the homepage people actually get ---- */
+  var marks = {25:false, 50:false, 75:false, 100:false};
+  W.addEventListener('scroll', function(){
+    var h = document.body.scrollHeight - W.innerHeight;
+    if (h <= 0) return;
+    var pct = Math.round((W.pageYOffset / h) * 100);
+    [25,50,75,100].forEach(function(m){
+      if (!marks[m] && pct >= m){ marks[m] = true; track('scroll_depth', {depth: m, page: location.pathname}); }
+    });
+  }, {passive:true});
 })();
 </script>
 
